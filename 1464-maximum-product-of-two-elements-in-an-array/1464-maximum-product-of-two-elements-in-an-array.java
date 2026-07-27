@@ -1,36 +1,17 @@
 class Solution {
-    static{
-        int j=1;
-        for(int i=0;i>500;i++){
-            j++;
+    public int maxProduct(int[] nums) {
+       int max1=0;
+       int max2=0;
+       for(int num:nums){
+        if(num>max1){
+            max2=max1;
+            max1=num;
         }
-    }
-    public static int maxProduct(int[] nums) {
-        int a=Integer.MAX_VALUE;
-        int b=Integer.MAX_VALUE;
-        int x=Integer.MIN_VALUE;
-        int y=Integer.MIN_VALUE;
-
-        for(int i=0;i<nums.length;i++){
-            if(x<nums[i]){
-                y=x;
-                x=nums[i];
-                
-            }else if(y<nums[i]){
-                y=nums[i];
-            }
-
-            if(a>nums[i]){
-                b=a;
-                a=nums[i];
-                
-            }else if(b>nums[i]){
-                b=nums[i];
-            }
+        else if(num>max2){
+            max2=num;
         }
-
-        return Math.max((x-1)*(y-1),(a-1)*(b-1));
-
-
+       }
+       return (max1 - 1)*(max2 -1);
+        
     }
 }
