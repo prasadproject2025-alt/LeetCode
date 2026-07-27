@@ -2,7 +2,7 @@
 class Solution {
     static{
         for(int i=0;i<500;i++){
-            isPalindrome(i);
+            i++;
         }
     }
     public static boolean isPalindrome(int x) {
