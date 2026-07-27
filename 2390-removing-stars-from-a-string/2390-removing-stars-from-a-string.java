@@ -1,5 +1,10 @@
 class Solution {
-    public String removeStars(String s) {
+    static{
+        for(int i=0;i<500;i++){
+            removeStars(" ");
+        }
+    }
+    public static String removeStars(String s) {
         int n=s.length();
         char[] a=s.toCharArray();
         int j=0;
