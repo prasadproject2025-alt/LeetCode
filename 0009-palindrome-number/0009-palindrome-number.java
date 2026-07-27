@@ -1,11 +1,7 @@
 
 class Solution {
-    static{
-        for(int i=0;i<500;i++){
-            i++;
-        }
-    }
-    public static boolean isPalindrome(int x) {
+    
+    public boolean isPalindrome(int x) {
         if(x < 0){
             return false;
         }
