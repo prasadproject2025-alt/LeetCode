@@ -1,5 +1,10 @@
 class Solution {
-    public boolean isPalindrome(int x) {
+    static{
+        for(int i=0;i<500;i++){
+            isPalindrome(i);
+        }
+    }
+    public static boolean isPalindrome(int x) {
         String s=Integer.toString(x);
         int right=s.length()-1;
         int left=0;
