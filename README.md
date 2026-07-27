@@ -11,6 +11,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Math
 |  |
 | ------- |
+| [0009-palindrome-number](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0009-palindrome-number) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 ## Sorting
 |  |
