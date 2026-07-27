@@ -1,5 +1,11 @@
 class Solution {
-    public int maxProduct(int[] nums) {
+    static{
+        int j=1;
+        for(int i=0;i>500;i++){
+            j++;
+        }
+    }
+    public static int maxProduct(int[] nums) {
         int a=Integer.MAX_VALUE;
         int b=Integer.MAX_VALUE;
         int x=Integer.MIN_VALUE;
