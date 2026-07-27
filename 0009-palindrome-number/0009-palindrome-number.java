@@ -1,3 +1,4 @@
+
 class Solution {
     static{
         for(int i=0;i<500;i++){
@@ -5,17 +6,19 @@ class Solution {
         }
     }
     public static boolean isPalindrome(int x) {
-        String s=Integer.toString(x);
-        int right=s.length()-1;
-        int left=0;
-        while(left<right){
-            if(s.charAt(left)!=s.charAt(right)){
-                return false;
-            }
-
-            left++;
-            right--;
+        if(x < 0){
+            return false;
         }
-        return true;
+
+        int original = x;
+        int reverse = 0;
+
+        while(x != 0){
+            int digit = x % 10;
+            reverse = reverse * 10 + digit;
+            x = x / 10;
+
+        }
+        return original == reverse;
     }
 }
