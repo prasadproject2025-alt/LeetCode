@@ -1,77 +1,66 @@
 class Solution {
-    private static final long LIMIT = 1_000_005L;
-
-    private long comb(int n, int k) {
-        if (k > n) return 0;
-        k = Math.min(k, n - k);
-
-        long res = 1;
-        for (int i = 1; i <= k; i++) {
-            res = res * (n - i + 1) / i;
-            if (res > LIMIT) return LIMIT;
-        }
-        return res;
-    }
-
-    private long countWays(int[] cnt) {
-        int total = 0;
-        for (int x : cnt) total += x;
-
-        long ans = 1;
-        int rem = total;
-
-        for (int x : cnt) {
-            if (x == 0) continue;
-            ans *= comb(rem, x);
-            if (ans > LIMIT) return LIMIT;
-            rem -= x;
-        }
-
-        return ans;
-    }
-
     public String smallestPalindrome(String s, int k) {
         int[] freq = new int[26];
-
-        for (char c : s.toCharArray()) {
-            freq[c - 'a']++;
+        int n = s.length();
+        int cnt = 0;
+        long totalWays = 1L;
+        for(int i=0;i<n/2;i++){
+            freq[s.charAt(i)-'a']++;
         }
 
-        int[] half = new int[26];
-        String mid = "";
-
-        for (int i = 0; i < 26; i++) {
-            half[i] = freq[i] / 2;
-            if ((freq[i] & 1) == 1) {
-                mid = String.valueOf((char) ('a' + i));
-            }
-        }
-
-        if (countWays(half) < k) {
-            return "";
-        }
-
-        StringBuilder left = new StringBuilder();
-        int len = s.length() / 2;
-
-        for (int pos = 0; pos < len; pos++) {
-            for (int c = 0; c < 26; c++) {
-                if (half[c] == 0) continue;
-
-                half[c]--;
-                long ways = countWays(half);
-
-                if (ways >= k) {
-                    left.append((char) ('a' + c));
-                    break;
+        char[] alpha = {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        };
+        StringBuilder sb = new StringBuilder();
+        outer : for(int i=25;i>=0;i--){
+            if(freq[i]==0)continue;
+            int j=1;
+            while(j<=freq[i]){
+                cnt++;
+                totalWays = (totalWays*cnt)/j;
+                if(totalWays>k){
+                    for(int l = 0;l<i;l++){
+                        while(freq[l]>0){
+                            sb.append(alpha[l]);
+                            freq[l]--;
+                        }
+                    }
+                    while(freq[i]>j){
+                        sb.append(alpha[i]);
+                        freq[i]--;
+                    }
+                    break outer;
                 }
-
-                k -= ways;
-                half[c]++;
+                j++;
             }
         }
+        if(k>totalWays)return "";
+        
+        
+        for(int i=0;i<cnt;i++){
+            for(char ch= 'a';ch<='z';ch++){
+                int j = ch-'a';
+                if(freq[j]==0)continue;
+                if(k<=(totalWays*freq[j])/(cnt-i)){
+                   totalWays = (totalWays*freq[j])/(cnt-i);
+                   freq[j]--;
+                   sb.append(ch);
+                   break;
+                }
+                else{
+                    k = (int)(k - (totalWays*freq[j])/(cnt-i));
+                }
+            }
+        }
+        if(n%2==1){
+            sb.append(s.charAt(n/2));
+        }
 
-        StringBuilder right = new StringBuilder(left).reverse();
-        return left.toString() + mid + right.toString();
+        for(int i=n/2-1;i>=0;i--){
+            sb.append(sb.charAt(i));
+        }
+
+        return sb.toString();
     }
 }
