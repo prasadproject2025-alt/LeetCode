@@ -1,5 +1,10 @@
 class Solution {
-    public int minimumPushes(String word) {
+    static{
+        for(int i=0;i<2000;i++){
+            i++;
+        }
+    }
+    public static int minimumPushes(String word) {
      int freq[]=new int[26];
      for(int i=0;i<word.length();i++)
        {
@@ -30,7 +35,7 @@ class Solution {
      }
      return ans;
     }
-    public void countSort(int[] nums){
+    public static void countSort(int[] nums){
        int max=0;
         for(int i=0;i<26;i++){
         max=Math.max(nums[i],max);
