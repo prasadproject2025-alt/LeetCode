@@ -1,56 +1,24 @@
 class Solution {
-    static{
-        for(int i=0;i<10000;i++){
-            i++;
+    public int minimumPushes(String word) {
+        int a=0;
+        int x=0;
+        HashMap<Character,Integer> map=new HashMap<>();
+        for(char b:word.toCharArray()){
+            map.put(b,map.getOrDefault(b,0)+1);
         }
-    }
-    public static int minimumPushes(String word) {
-     int freq[]=new int[26];
-     for(int i=0;i<word.length();i++)
-       {
-        freq[word.charAt(i)-'a']++;
-       }
-     countSort(freq);
-     int j=25;
-     int cnt=0;
-     int ans=0;
-     while(j>=0){
-        int t=freq[j];
-        if(t>0)
-           cnt++;
-        if(cnt<=8){
-          ans+=t;
-        }       
-        else if(cnt>8 && cnt<=16){
-           ans+=t*2;
-        }
-        else if(cnt>16 && cnt<=24)
-        { ans+=t*3;
 
-        }
-        else if(cnt>24 && cnt<=26) {
-             ans+=t*4;
-        }
-        j--;
-     }
-     return ans;
-    }
-    public static void countSort(int[] nums){
-       int max=0;
-        for(int i=0;i<26;i++){
-        max=Math.max(nums[i],max);
-        }
-        int freq[]=new int[max+1];
-        for(int i=0;i<26;i++){
-            freq[nums[i]]++;
-        }
-        int j=0;
-        for(int i=0;i<max+1;i++){
-            while(freq[i]>0){
-                nums[j]=i;
-                freq[i]--;
-                j++;
+        List<Integer> y=new ArrayList<>(map.values());
+        Collections.sort(y);
+        Collections.reverse(y);
+        for(int c:y){
+            int t=x/8+1;
+            if (t==0){
+                a+=1*c;
+            }else{
+                a+=t*c;
             }
-        }
+            x++;
+        }        
+        return a;
     }
 }
