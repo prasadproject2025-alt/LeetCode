@@ -1,23 +1,17 @@
 class Solution {
 
     public boolean predictTheWinner(int[] nums) {
-        int score = solve(nums, 0, nums.length - 1);
-
-        return score >= 0;
-    }
-
-    public int solve(int[] nums, int left, int right) {
-
-        if (left == right) {
-            return nums[left];
+        
+        int n = nums.length;
+        int[] dp = nums.clone(); 
+        
+        for (int diff = 1; diff < n; ++diff) {
+            for (int j = n - 1; j - diff >= 0; --j) {
+                int i = j - diff;
+                dp[j] = Math.max(nums[i] - dp[j], nums[j] - dp[j - 1]);
+            }
         }
-
-        int takeLeft =
-            nums[left] - solve(nums, left + 1, right);
-
-        int takeRight =
-            nums[right] - solve(nums, left, right - 1);
-
-        return Math.max(takeLeft, takeRight);
+        
+        return dp[n - 1] >= 0;
     }
 }
