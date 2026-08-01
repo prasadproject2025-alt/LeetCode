@@ -1,6 +1,11 @@
 class Solution {
+    static{
+        for(int i=0;i<500;i++){
+            i++;
+        }
+    }
 
-    public boolean predictTheWinner(int[] nums) {
+    public static boolean predictTheWinner(int[] nums) {
         
         int n = nums.length;
         int[] dp = nums.clone(); 
