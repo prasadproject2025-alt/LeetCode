@@ -1,4 +1,4 @@
-// https://www.youtube.com/@0x3f
+
 class Solution {
     public String stoneGameIII(int[] stoneValue) {
         int sufSum = 0;
