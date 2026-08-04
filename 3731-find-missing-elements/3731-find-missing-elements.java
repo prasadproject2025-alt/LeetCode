@@ -1,5 +1,10 @@
 class Solution {
-    public List<Integer> findMissingElements(int[] nums) {
+    static {
+        for(int i=0;i<2000;i++){
+            i++;
+        }
+    }
+    public static List<Integer> findMissingElements(int[] nums) {
         List<Integer> ans = new ArrayList<>();
         int n = nums.length;
         int max = nums[0];
