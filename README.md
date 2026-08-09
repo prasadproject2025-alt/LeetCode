@@ -11,6 +11,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 | [1406-stone-game-iii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1406-stone-game-iii) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2946-matrix-similarity-after-cyclic-shifts) |
@@ -23,6 +24,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 | [1406-stone-game-iii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1406-stone-game-iii) |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2946-matrix-similarity-after-cyclic-shifts) |
 | [3014-minimum-number-of-pushes-to-type-word-i](https://github.com/prasadproject2025-alt/LeetCode/tree/master/3014-minimum-number-of-pushes-to-type-word-i) |
@@ -83,6 +85,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0042-trapping-rain-water](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 | [1406-stone-game-iii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1406-stone-game-iii) |
 | [3302-find-the-lexicographically-smallest-valid-sequence](https://github.com/prasadproject2025-alt/LeetCode/tree/master/3302-find-the-lexicographically-smallest-valid-sequence) |
 ## Monotonic Stack
@@ -117,6 +120,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 | [1406-stone-game-iii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1406-stone-game-iii) |
 ## Depth-First Search
 |  |
@@ -142,4 +146,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [3348-smallest-divisible-digit-product-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/3348-smallest-divisible-digit-product-ii) |
+## Minimax
+|  |
+| ------- |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
+## Prefix Sum
+|  |
+| ------- |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
+## Zero-Sum Game
+|  |
+| ------- |
+| [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 <!---LeetCode Topics End-->
