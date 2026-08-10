@@ -47,6 +47,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String
 |  |
 | ------- |
+| [0020-valid-parentheses](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0020-valid-parentheses) |
 | [0058-length-of-last-word](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0058-length-of-last-word) |
 | [2390-removing-stars-from-a-string](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2390-removing-stars-from-a-string) |
 | [3014-minimum-number-of-pushes-to-type-word-i](https://github.com/prasadproject2025-alt/LeetCode/tree/master/3014-minimum-number-of-pushes-to-type-word-i) |
@@ -58,6 +59,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Stack
 |  |
 | ------- |
+| [0020-valid-parentheses](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0042-trapping-rain-water) |
 | [2390-removing-stars-from-a-string](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2390-removing-stars-from-a-string) |
 ## Simulation
@@ -171,4 +173,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1510-stone-game-iv](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1510-stone-game-iv) |
+## Bracket Sequences
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0020-valid-parentheses) |
 <!---LeetCode Topics End-->
