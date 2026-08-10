@@ -1,27 +1,29 @@
 class Solution {
     public boolean isValid(String s) {
-        if (s.length() % 2 != 0)
-            return false;
-
-        char[] pila = new char[s.length()];
-        int tope = 0;
+        ArrayDeque<Character> stack = new ArrayDeque<>();
 
         for (char c : s.toCharArray()) {
             switch (c) {
                 case '(':
-                    pila[tope++] = ')';
+                    stack.push(')');
                     break;
                 case '[':
-                    pila[tope++] = ']';
+                    stack.push(']');
                     break;
                 case '{':
-                    pila[tope++] = '}';
+                    stack.push('}');
                     break;
-                default:
-                    if(tope == 0 || pila[--tope] != c )
+
+                case ')':
+                case ']':
+                case '}':
+                    if (stack.isEmpty() || stack.pop() != c) {
                         return false;
+                    }
+                    break;
             }
         }
-        return tope == 0;
+
+        return stack.isEmpty();
     }
 }
