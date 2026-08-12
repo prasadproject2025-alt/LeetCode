@@ -1,16 +1,29 @@
-public class Solution {
+class Solution {
+    static class Counter {
+        int cnt = 0;
+    }
     public int maxSubarrayLength(int[] nums, int k) {
-        HashMap<Integer, Integer> count = new HashMap<>();
-        int l = 0, cnt = 0; // count of numbers with freq > k
-        for (int r = 0; r < nums.length; r++) {
-            count.put(nums[r], count.getOrDefault(nums[r], 0) + 1);
-            if (count.get(nums[r]) > k) cnt++;
-            if (cnt > 0) {
-                if (count.get(nums[l]) > k) cnt--;
-                count.put(nums[l], count.get(nums[l]) - 1);
-                l++;
+        int N = nums.length;
+        Map<Integer, Counter> map = new HashMap<>();
+
+        int ll = 0;
+        int rr = 0;
+        int result = 0;
+        while (rr < N) {
+            int num = nums[rr++];
+            Counter counter = map.get(num);
+            if ( counter == null ) map.put(num, counter = new Counter());
+            if ( counter.cnt < k ) {
+                counter.cnt++;
+            } else {
+                int num2 = 0;
+                while ( (num2 = nums[ll++]) != num ) {
+                    Counter counter2 = map.get(num2);
+                    counter2.cnt--;
+                }
             }
+            result = Math.max(result, rr - ll);
         }
-        return nums.length - l;
+        return result;
     }
 }
