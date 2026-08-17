@@ -1,37 +1,32 @@
+// https://www.youtube.com/@0x3f
 class Solution {
-  public int stoneGameV(int[] stoneValue) {
-    final int n = stoneValue.length;
-    int[][] mem = new int[n][n];
-    int[] prefix = new int[n + 1];
-    Arrays.stream(mem).forEach(A -> Arrays.fill(A, Integer.MIN_VALUE));
-    for (int i = 0; i < n; ++i)
-      prefix[i + 1] = prefix[i] + stoneValue[i];
-    return stoneGameV(stoneValue, 0, n - 1, prefix, mem);
-  }
+    public int stoneGameV(int[] stoneValue) {
+        int n = stoneValue.length;
+        int[] sum = new int[n + 1]; // stoneValue 的前缀和
+        for (int i = 0; i < n; i++) {
+            sum[i + 1] = sum[i] + stoneValue[i];
+        }
 
-  // Returns the maximum score that Alice can obtain from stoneValue[i..j].
-  private int stoneGameV(int[] stoneValue, int i, int j, int[] prefix, int[][] mem) {
-    if (i == j)
-      return 0;
-    if (mem[i][j] != Integer.MIN_VALUE)
-      return mem[i][j];
+        int[] f = new int[n + 1];
+        int[][] sufMax = new int[n + 1][n + 1];
 
-    // Try all the possible partitions.
-    for (int p = i; p < j; ++p) {
-      // sum(stoneValue[i..p])
-      final int leftSum = prefix[p + 1] - prefix[i];
-      final int throwRight = leftSum + stoneGameV(stoneValue, i, p, prefix, mem);
-      // sum(stoneValue[p + 1..j])
-      final int rightSum = prefix[j + 1] - prefix[p + 1];
-      final int throwLeft = rightSum + stoneGameV(stoneValue, p + 1, j, prefix, mem);
-      if (leftSum < rightSum)
-        mem[i][j] = Math.max(mem[i][j], throwRight);
-      else if (leftSum > rightSum)
-        mem[i][j] = Math.max(mem[i][j], throwLeft);
-      else
-        mem[i][j] = Math.max(Math.max(mem[i][j], throwLeft), throwRight);
+        for (int i = n - 1; i >= 0; i--) {
+            sufMax[i + 1][i + 1] = Integer.MIN_VALUE;
+            sufMax[i][i + 1] = -sum[i]; // f[i][i+1] - sum[i] = 0 - sum[i] = -sum[i]
+            int preMax = 0;
+            int k = i + 1;
+            for (int j = i + 2; j <= n; j++) {
+                while (sum[k] - sum[i] <= sum[j] - sum[k]) {
+                    preMax = Math.max(preMax, f[k] + sum[k]);
+                    k++;
+                }
+                // 循环结束后 sum[k] - sum[i] > sum[j] - sum[k]
+                int q = sum[k - 1] - sum[i] == sum[j] - sum[k - 1] ? k - 1 : k;
+                f[j] = Math.max(preMax - sum[i], sufMax[q][j] + sum[j]);
+                sufMax[i][j] = Math.max(sufMax[i + 1][j], f[j] - sum[i]);
+            }
+        }
+
+        return f[n];
     }
-
-    return mem[i][j];
-  }
 }
