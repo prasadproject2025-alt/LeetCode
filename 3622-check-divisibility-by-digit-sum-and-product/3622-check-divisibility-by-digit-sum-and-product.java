@@ -1,14 +1,22 @@
 class Solution {
     public boolean checkDivisibility(int n) {
-        String s=Integer.toString(n);
-        int x=0;
-        int y=1;
-        for(char a:s.toCharArray()){
-            int t=Character.getNumericValue(a);
-            x+=t;
-            y*=t;
+        int sum=0;
+        int pro=1;
+        int original=n;
+        while(n!=0)
+        {
+            int last=n%10;
+            sum=sum+last;
+            pro=pro*last;
+            n/=10;
         }
-        
-        return n%(x+y)==0;
+
+        int result=sum+pro;
+        if(original%result==0)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
