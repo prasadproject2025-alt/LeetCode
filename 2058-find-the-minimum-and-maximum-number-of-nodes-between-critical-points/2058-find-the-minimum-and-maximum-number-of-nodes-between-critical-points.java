@@ -1,28 +1,74 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-  public int[] nodesBetweenCriticalPoints(ListNode head) {
-    int minDistance = Integer.MAX_VALUE;
-    int firstMaIndex = -1;
-    int prevMaIndex = -1;
-    int index = 1;
-    ListNode prev = head;      // Point to the index 0.
-    ListNode curr = head.next; // Point to the index 1.
+    public int[] nodesBetweenCriticalPoints(ListNode head) {
+        
+        int prev=head.val;
+        int curr,next;
+        ListNode temp=head.next;
 
-    while (curr.next != null) {
-      if (curr.val > prev.val && curr.val > curr.next.val ||
-          curr.val < prev.val && curr.val < curr.next.val) {
-        if (firstMaIndex == -1) // Only assign once.
-          firstMaIndex = index;
-        if (prevMaIndex != -1)
-          minDistance = Math.min(minDistance, index - prevMaIndex);
-        prevMaIndex = index;
-      }
-      prev = curr;
-      curr = curr.next;
-      ++index;
+        int mindis;
+        int maxdis;
+
+        int firstidx=0,curridx=0,previdx=0;
+
+        
+
+        while(temp.next!=null){
+            curr=temp.val;
+            next=temp.next.val;
+            temp=temp.next;
+            if(curr<prev && curr<next || curr>prev && curr>next ) {
+                curridx=1;
+                firstidx=1;
+                prev=curr;
+                break;
+            }
+            prev=curr;
+        }
+
+        if(firstidx==0) return new int[]{-1,-1};
+
+        while(temp.next!=null){
+            curr=temp.val;
+            next=temp.next.val;
+            temp=temp.next;
+            curridx++;
+            if(curr<prev && curr<next || curr>prev && curr>next ) {
+                previdx=curridx;
+                prev=curr;
+                break;
+            }
+            prev=curr;
+        }
+
+        if(previdx==0) return new int[]{-1,-1};
+
+        mindis=maxdis=curridx-firstidx;
+
+           while(temp.next!=null){
+            curr=temp.val;
+            next=temp.next.val;
+            temp=temp.next;
+            curridx++;
+            if(curr<prev && curr<next || curr>prev && curr>next ) {
+                maxdis=curridx-firstidx;
+                if((curridx-previdx)<mindis) mindis=curridx-previdx;
+                previdx=curridx;
+               
+            }
+            prev=curr;
+        }
+
+        return new int[]{mindis,maxdis};
+
     }
-
-    if (minDistance == Integer.MAX_VALUE)
-      return new int[] {-1, -1};
-    return new int[] {minDistance, prevMaIndex - firstMaIndex};
-  }
 }
