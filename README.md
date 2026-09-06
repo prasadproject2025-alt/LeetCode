@@ -78,6 +78,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0020-valid-parentheses](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0020-valid-parentheses) |
 | [0058-length-of-last-word](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0058-length-of-last-word) |
+| [0115-distinct-subsequences](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0115-distinct-subsequences) |
 | [1927-sum-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1927-sum-game) |
 | [2213-longest-substring-of-one-repeating-character](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2213-longest-substring-of-one-repeating-character) |
 | [2390-removing-stars-from-a-string](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2390-removing-stars-from-a-string) |
@@ -126,6 +127,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0042-trapping-rain-water) |
+| [0115-distinct-subsequences](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0115-distinct-subsequences) |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
 | [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
