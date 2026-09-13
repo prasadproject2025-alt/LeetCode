@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0042-trapping-rain-water](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
+| [0835-image-overlap](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0835-image-overlap) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
 | [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 | [1386-cinema-seat-allocation](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1386-cinema-seat-allocation) |
@@ -112,6 +113,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Matrix
 |  |
 | ------- |
+| [0835-image-overlap](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0835-image-overlap) |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2946-matrix-similarity-after-cyclic-shifts) |
 | [3568-minimum-moves-to-clean-the-classroom](https://github.com/prasadproject2025-alt/LeetCode/tree/master/3568-minimum-moves-to-clean-the-classroom) |
 ## Counting Sort
