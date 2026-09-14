@@ -44,6 +44,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0050-powx-n](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0050-powx-n) |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
+| [0836-rectangle-overlap](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0836-rectangle-overlap) |
 | [0877-stone-game](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0877-stone-game) |
 | [1140-stone-game-ii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1140-stone-game-ii) |
 | [1406-stone-game-iii](https://github.com/prasadproject2025-alt/LeetCode/tree/master/1406-stone-game-iii) |
@@ -303,4 +304,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2265-count-nodes-equal-to-average-of-subtree](https://github.com/prasadproject2025-alt/LeetCode/tree/master/2265-count-nodes-equal-to-average-of-subtree) |
+## Geometry
+|  |
+| ------- |
+| [0836-rectangle-overlap](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0836-rectangle-overlap) |
 <!---LeetCode Topics End-->
