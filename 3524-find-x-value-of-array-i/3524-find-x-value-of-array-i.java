@@ -1,24 +1,20 @@
 class Solution {
-    public long[] resultArray(int[] A, int k) {
+    public long[] resultArray(int[] nums, int k) {
         long[] res = new long[k];
-        int[] freq = new int[k];
+        long[] cnt = new long[k];
+        for(int x: nums){
+            int mod = x%k;
 
-        for (int n : A) {
-            n %= k;
-            int[] cur = new int[k];
-            cur[n] = 1;
-
-            for (int x = 0; x < k; x++) {
-                cur[x * n % k] += freq[x];
+            long[] tmp = new long[k];
+            for(int i=0;i<k;i++){
+                int newMod = (i*mod)%k;
+                tmp[newMod] += cnt[i];
+                res[newMod] += cnt[i];
             }
-
-            freq = cur;
-
-            for (int x = 0; x < k; x++) {
-                res[x] += freq[x];
-            }
+            res[mod]++;
+            tmp[mod]++;
+            cnt = tmp;
         }
-
         return res;
     }
 }
