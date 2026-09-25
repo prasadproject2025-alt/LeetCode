@@ -1,44 +1,44 @@
 class Solution {
-    private int i;
-    private String expr;
-    public List<String> braceExpansionII(String expression) {
-        this.expr = expression;
-        this.i = 0;
-        Set<String> res = parse();
-        List<String> ans = new ArrayList<>(res);
-        Collections.sort(ans);
-        return ans;
+  public List<String> braceExpansionII(String expression) {
+    return dfs(expression, 0, expression.length() - 1);
+  }
+
+  private List<String> dfs(final String expression, int s, int e) {
+    TreeSet<String> ans = new TreeSet<>();
+    List<List<String>> groups = new ArrayList<>();
+    groups.add(new ArrayList<>());
+    int layer = 0;
+    int left = 0;
+
+    for (int i = s; i <= e; ++i)
+      if (expression.charAt(i) == '{' && ++layer == 1)
+        left = i + 1;
+      else if (expression.charAt(i) == '}' && --layer == 0)
+        merge(groups, dfs(expression, left, i - 1));
+      else if (expression.charAt(i) == ',' && layer == 0)
+        groups.add(new ArrayList<>());
+      else if (layer == 0)
+        merge(groups, new ArrayList<>(List.of(String.valueOf(expression.charAt(i)))));
+
+    for (final List<String> group : groups)
+      for (final String word : group)
+        ans.add(word);
+
+    return new ArrayList<>(ans);
+  }
+
+  void merge(List<List<String>> groups, List<String> group) {
+    if (groups.get(groups.size() - 1).isEmpty()) {
+      groups.set(groups.size() - 1, group);
+      return;
     }
-    private Set<String> parse() {
-        Set<String> res = new TreeSet<>();
-        Set<String> cur = new TreeSet<>();
-        cur.add("");
-        while (i < expr.length() && expr.charAt(i) != '}') {
-            if (expr.charAt(i) == '{') {
-                i++;
-                Set<String> next = parse();
-                i++;
-                cur = product(cur, next);
-            } else if (expr.charAt(i) == ',') {
-                res.addAll(cur);
-                cur = new TreeSet<>();
-                cur.add("");
-                i++;
-            } else {
-                Set<String> next = new TreeSet<>();
-                next.add(String.valueOf(expr.charAt(i)));
-                i++;
-                cur = product(cur, next);
-            }
-        }
-        res.addAll(cur);
-        return res;
-    }
-    private Set<String> product(Set<String> a, Set<String> b) {
-        Set<String> res = new TreeSet<>();
-        for (String x : a)
-            for (String y : b)
-                res.add(x + y);
-        return res;
-    }
+
+    List<String> mergedGroup = new ArrayList<>();
+
+    for (final String word1 : groups.get(groups.size() - 1))
+      for (final String word2 : group)
+        mergedGroup.add(word1 + word2);
+
+    groups.set(groups.size() - 1, mergedGroup);
+  }
 }
