@@ -1,23 +1,29 @@
+import java.util.*;
+
 class Solution {
-    List<String> res = new ArrayList<>();
-
     public List<String> generateParenthesis(int n) {
-        if (n-- == 1) return List.of("()");
-        dfs(n, n, "(");
-
-        return res;
+        List<String> ans = new ArrayList<>();
+        char[] s = new char[2 * n];
+        solve(ans, s, 0, 0, 0, n);
+        return ans;
     }
 
-    private void dfs(int O, int C, String s) {
-        if (O == 0 && C == 0) {
-            res.add(s + ")");
+    private void solve(List<String> ans, char[] s, int pos,
+                       int open, int close, int n) {
+
+        if (pos == s.length) {
+            ans.add(new String(s));
             return;
         }
 
-        if (O > 0)
-            dfs(O - 1, C, s + "(");
+        if (open < n) {
+            s[pos] = '(';
+            solve(ans, s, pos + 1, open + 1, close, n);
+        }
 
-        if (C >= O)
-            dfs(O, C - 1, s + ")");
+        if (close < open) {
+            s[pos] = ')';
+            solve(ans, s, pos + 1, open, close + 1, n);
+        }
     }
 }
