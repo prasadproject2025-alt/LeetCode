@@ -1,24 +1,31 @@
 class Solution {
     public long maxAlternatingSum(int[] nums) {
-        // Step 1: square every number (long, so it cannot overflow)
-        long[] a = new long[nums.length];
-        for (int i = 0; i < nums.length; i++)
-            a[i] = (long) nums[i] * nums[i];
-
-        // Step 2: sort — smallest on the left, biggest on the right
-        Arrays.sort(a);
-
-        long ans = 0;
-        int k = nums.length / 2;   // number of minus places
-
-        // Step 3: subtract the k smallest squares
-        for (int i = 0; i < k; i++)
-            ans -= a[i];
-
-        // Step 4: add all the bigger squares
-        for (int i = k; i < nums.length; i++)
-            ans += a[i];
-
-        return ans;
+        int n = nums.length;
+        int maxVal = 0;
+        for(int i = 0; i < n; i++){
+            if(nums[i]<0) nums[i]*=-1;
+            maxVal = Math.max(nums[i], maxVal);
+        }
+        int[] freq = new int[maxVal+1];
+        for(int x : nums) freq[x]++;
+        int l = 0, r = maxVal;
+        long sum = 0;
+        while(r>l ){
+            while(l < r && freq[l] == 0)l++;
+            while(l < r && freq[r] == 0)r--;
+        
+            int cnt = Math.min(freq[l], freq[r]);
+            freq[l]-=cnt;
+            freq[r]-=cnt;
+            long diff = r*r - l*l;
+            sum+=(diff *cnt);
+        }
+        if((freq[r] & 1) != 0){
+            sum += r*r;
+        }
+        else if((freq[l] & 1) != 0){
+            sum += l*l;
+        }
+        return sum;
     }
 }
