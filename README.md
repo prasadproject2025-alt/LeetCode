@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0001-two-sum](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0001-two-sum) |
 | [0042-trapping-rain-water](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0042-trapping-rain-water) |
+| [0453-minimum-moves-to-equal-array-elements](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0453-minimum-moves-to-equal-array-elements) |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0835-image-overlap](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0835-image-overlap) |
@@ -64,6 +65,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0009-palindrome-number](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0009-palindrome-number) |
 | [0050-powx-n](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0050-powx-n) |
+| [0453-minimum-moves-to-equal-array-elements](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0453-minimum-moves-to-equal-array-elements) |
 | [0486-predict-the-winner](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0836-rectangle-overlap](https://github.com/prasadproject2025-alt/LeetCode/tree/master/0836-rectangle-overlap) |
